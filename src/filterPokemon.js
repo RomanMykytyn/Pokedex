@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class App extends React.Component {
+class FilterPokemon extends React.Component {
   constructor() {
     super();
     this.state = {
-        modalIsOpen: false,
+
     };
   }
 
@@ -14,8 +14,10 @@ class App extends React.Component {
 
 
   render() {
-    return ();
+    return (
+      <label><input type="checkbox" name={this.props.name} defaultChecked />{this.props.name}<br /></label>
+    );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+export default FilterPokemon;

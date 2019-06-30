@@ -1,12 +1,54 @@
-.App {
+.listPokemon {
   display: flex;
+  flex-wrap: wrap;
+  float: left;
   align-items: center;
   justify-content: center;
-  width: 650px;
-  height: 400px;
+  max-width: 70%;
+  width: 70%;
+  height: auto;
   padding-left: 10px;
-  margin: 50px auto;
-  background-color: #FE0065;
-  border-radius: 10px;
-  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.22), 0 18px 45px rgba(0, 0, 0, 0.22);
+  margin: auto;
+  border: 1px solid red;
+}
+
+.rightBar {
+  display: inline-block;
+  position: fixed;
+  right: 25px;
+  width: 25%;
+  min-width: 250px;
+  height: 600px;
+  border: 1px solid red;
+}
+
+.tile {
+  margin: 20px;
+  width: 100px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+.loadMore {
+width: 100%;
+margin: 20px;
+text-align: center;
+}
+
+.btn {
+  padding: 15px 25px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgb(66, 184, 221);
+  border-radius: 7px;
+}
+
+.filter {
+  text-align: center;
+}
+
+.listFilter {
+  text-align: left;
+  column-count: 3;
 }

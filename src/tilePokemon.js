@@ -8,19 +8,14 @@ class TilePokemon extends React.Component {
     super();
     this.state = {
         pokemon: {},
-        check: true,
     };
+    this.handlerClick = this.handlerClick.bind(this);
   }
 
   componentDidMount() {
     P.getPokemonByName(this.props.name)
     .then( response => {
       console.log(response);
-      if (response.types.every(el => this.props.listChecked[el.type.name] === false)) {
-        this.setState({
-          check: false
-        });
-      }
       return this.setState({
         pokemon: response
       });
@@ -30,23 +25,36 @@ class TilePokemon extends React.Component {
     });
   }
 
+  handlerClick() {
+    this.props.clickPokemon(this.state.pokemon)
+  }
+
+  capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
 
 
   render() {
-    return (
-      <div className='tile'>
-        {this.state.pokemon.sprites ? (
-          <><img src={this.state.pokemon.sprites.front_default} />
-            {this.state.pokemon.name}
-            {this.state.pokemon.id}
-            {this.state.check}</>
-          ) : (
-            'Loading....'
-          )
-        }
 
-      </div>
+    let obj = this.state.pokemon.types;
+    if (obj && obj.some(el => this.props.listChecked[el.type.name] === true)) {
+    return (
+
+        <div className='tile' onClick={this.handlerClick}>
+            <img src={this.state.pokemon.sprites.front_default} />
+              <p>{this.capitalize(this.state.pokemon.name)}</p>
+                <div>
+                  {this.state.pokemon.types.map(el =>
+                    <span className='type' key={el.type.name}>{el.type.name}</span>
+                  )}
+                </div>
+        </div>
+
     );
+  }
+  else {
+    return (null)
+  }
   }
 }
 

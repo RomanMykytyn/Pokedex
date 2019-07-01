@@ -7,15 +7,18 @@ class FilterPokemon extends React.Component {
     this.state = {
 
     };
+    this.handleFilterChange = this.handleFilterChange.bind(this);
   }
 
-  componentDidMount() {}
 
+  handleFilterChange(event) {
+    this.props.updateCheck(event.target.name, event.target.checked);
+  }
 
 
   render() {
     return (
-      <label><input type="checkbox" name={this.props.name} defaultChecked />{this.props.name}<br /></label>
+      <label><input type="checkbox" name={this.props.name} onChange={this.handleFilterChange} defaultChecked />{this.props.name}<br /></label>
     );
   }
 }

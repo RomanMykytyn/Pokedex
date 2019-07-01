@@ -1,3 +1,4 @@
+
 .listPokemon {
   display: flex;
   flex-wrap: wrap;
@@ -9,7 +10,7 @@
   height: auto;
   padding-left: 10px;
   margin: auto;
-  border: 1px solid red;
+  /*border: 1px solid red;*/
 }
 
 .rightBar {
@@ -19,14 +20,19 @@
   width: 25%;
   min-width: 250px;
   height: 600px;
-  border: 1px solid red;
+  /*border: 1px solid red;*/
 }
 
 .tile {
   margin: 20px;
   width: 100px;
   height: 200px;
-  border: 1px solid black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.tile:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,1);
 }
 
 .loadMore {
@@ -46,9 +52,49 @@ text-align: center;
 
 .filter {
   text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,1);
 }
 
 .listFilter {
   text-align: left;
   column-count: 3;
+}
+
+
+.type {
+  display: inline-block;
+  margin: 1px 3px;
+  padding: 2px;
+  background-color: #728acc;
+  color: white;
+  border-radius: 5px;
+  word-wrap: normal;
+}
+
+.detail {
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,1);
+  margin: 2px;
+  padding-bottom: 1px;
+}
+
+table tr td {
+  border: 2px solid grey;
+
+}
+
+td {
+  padding: 4px;
+  width: 50px;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: center;
+  margin: 0 auto 10px auto;
+  width: 80%;
+}
+
+fieldset {
+  border: none;
 }
